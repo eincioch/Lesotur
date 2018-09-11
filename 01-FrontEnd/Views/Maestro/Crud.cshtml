@@ -1,0 +1,39 @@
+﻿@model TipoDocumento
+
+@{
+//ViewBag.Title = Model.Id > 0 ? Model.Descripcion : "Nuevo registro";
+}
+@*<h2 class="page-header">@(Model.Id > 0 ? Model.Descripcion : "Nuevo registro")</h2>*@
+
+
+@using (Html.BeginForm("Crud", "Maestro", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+
+<div class="form-horizontal">
+    <h4>TipoDocumento</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-default" type="submit">
+                Guardar <i class="fa fa-save"></i>
+            </button>
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Volver atrás", "Index")
+</div>

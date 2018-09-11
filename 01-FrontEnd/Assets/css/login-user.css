@@ -1,0 +1,121 @@
+body
+{
+    background: url('../images/bg_web.png') center bottom no-repeat;
+}
+.ui-tabs.ui-tabs-vertical 
+{
+    padding: 0;
+    width: 95%;
+    margin: 10px auto;
+}
+.ui-tabs.ui-tabs-vertical .ui-widget-header
+{
+    border: none;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav {
+    float: left;
+    width: 20%;
+    background: #fff;
+    border-radius: 4px 0 0 4px;
+    border-right: 1px solid gray;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li {
+    clear: left;
+    width: 100%;
+    margin: 0.2em 0;
+    border: 1px solid gray;
+    border-width: 1px 0 1px 1px;
+    border-radius: 4px 0 0 4px;
+    overflow: hidden;
+    position: relative;
+    right: -2px;
+    z-index: 2;
+    font: 14px 'museo500';
+    background: #fff
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a
+{
+    display: block;
+    width: 100%;
+    padding: 0.6em 1em;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a:hover {cursor: pointer;}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active 
+{
+    margin-bottom: 0.2em;
+    padding-bottom: 0;
+    border-right: 1px solid white;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li:last-child {margin-bottom: 10px;}
+.ui-tabs.ui-tabs-vertical .ui-tabs-panel {
+    float: left;
+    width: 75%;
+    height: 75%;
+    border-left: 1px solid gray;
+    border-radius: 0;
+    position: relative;
+    left: -1px;
+}
+.login
+{
+    height: auto;
+    margin: 150px auto;
+    position: relative;
+    width: 320px;
+}
+.txt_login {
+    width: 240px;
+    border: 1px solid #c1c1c1;
+    height: 30px;
+    font-family: 'open_sanslight';
+    padding: 0 10px;
+}
+.table_login{margin-top: 20px;}
+.table_login td{padding-bottom: 20px;}
+.btn_login
+{
+    background: #ffa700;
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    margin-left: 60px;
+    cursor: pointer;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor
+{
+    font: 14px 'museo500';
+    color: #000;
+    background: #FFBD35
+}
+.tb_cli,.tb_fac
+{
+    width: 80%;margin: 10px auto;
+    font: 16px 'open_sanslight';
+}
+.tb_his
+{
+    width: 90%;margin: 10px auto;
+    font: 16px 'open_sanslight';
+}
+.tb_cli td{width: 50%;padding-bottom: 15px;}
+.tb_fac tr{text-align: center;}
+.tb_fac th,.tb_his th{border-bottom: 2px solid #f6a500;}
+.tb_fac td a,.tb_his td a{padding-top: 10px;}
+.tb_his tr{text-align: left;}
+.ui-widget-content {border: none;background: transparent;color: #222222;}
+.title_tab{margin-left:10px;font: 30px 'museo500';color: #171e8d;}
+/*pagination*/
+#pagination-digg li { border:0; margin:0; padding:0; font-size:17px; list-style:none; /* savers */ float:left; font-family: 'museo300';}
+#pagination-digg a  { border:solid 1px #f6a500; margin-right:2px; }
+#pagination-digg .previous-off,
+#pagination-digg .next-off{ border:solid 1px #DEDEDE; color:#888888; display:block; float:left; font-weight:bold; margin-right:2px; padding:3px 4px; }
+#pagination-digg .next a,#pagination-digg .previous a { font-weight:bold; }
+#pagination-digg .active
+{   background:#f6a500; color:#FFFFFF;
+    font-weight:bold; display:block;
+    float:left; padding:4px 6px; 
+    /* savers */ margin-right:2px; }
+#pagination-digg a:link,#pagination-digg a:visited
+{ color:#000; display:block; float:left; padding:3px 6px; text-decoration:none; }
+#pagination-digg a:hover{ border:solid 1px #f6a500; }
+#pagination{margin: 40px;float: right;margin-right: 80px;}

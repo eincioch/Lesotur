@@ -1,0 +1,98 @@
+﻿@model Persona
+
+@{
+    ViewBag.Title = Model.Id > 0 ? Model.ApePaterno : "Nuevo registro";
+}
+
+<h2>Crud</h2>
+
+@using (Html.BeginForm("Crud", "Registro", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+
+<div class="form-horizontal">
+    <h4>Persona</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ApePaterno, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ApePaterno, new { htmlAttributes = new { @class = "form-control", @style = "text-transform:uppercase", tabindex = 1, autofocus = "autofocus" } })
+            @Html.ValidationMessageFor(model => model.ApePaterno, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ApeMaterno, htmlAttributes: new { @class = "control-label col-md-2"  })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ApeMaterno, new { htmlAttributes = new { @class = "form-control" , @style = "text-transform:uppercase", tabindex = 2 } })
+            @Html.ValidationMessageFor(model => model.ApeMaterno, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombres, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nombres, new { htmlAttributes = new { @class = "form-control", @style = "text-transform:uppercase", tabindex = 3 } })
+            @Html.ValidationMessageFor(model => model.Nombres, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Genero, htmlAttributes:  new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            <select name="Gender" class="form-control" tabindex="4">
+                <option @(Enums.Gender.Female == Model.Genero ? "selected" : "") value="@Enums.Gender.Female">Mujer</option>
+                <option @(Enums.Gender.Male == Model.Genero ? "selected" : "") value="@Enums.Gender.Male">Hombre</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.Birthday, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control", tabindex = 5 } })
+            @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!--
+    <div class="form-group">
+        @Html.LabelFor(model => model.Birthday, htmlAttributes: new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            <input class="form-control" tabindex="5" type="text" name="Birthday" value="@(Model.Birthday == DateTime.MinValue ? "" : Model.Birthday.ToShortDateString())" />
+            @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    -->
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TipoDocumentoId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TipoDocumentoId, new { htmlAttributes = new { @class = "form-control", tabindex = 6 } })
+            @Html.ValidationMessageFor(model => model.TipoDocumentoId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NumeroDocumento, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NumeroDocumento, new { htmlAttributes = new { @class = "form-control", tabindex = 7 } })
+            @Html.ValidationMessageFor(model => model.NumeroDocumento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-default" type="submit">
+                Guardar <i class="fa fa-save"></i>
+            </button>
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Volver atrás", "Index")
+</div>

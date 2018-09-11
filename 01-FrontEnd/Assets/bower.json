@@ -1,0 +1,17 @@
+{
+  "name": "Lesotur Assets",
+  "authors": [
+    "EV-Soft Consultores"
+  ],
+  "description": "Recurso para el lado del cliente",
+  "main": "",
+  "license": "MIT",
+  "homepage": "http://evsoftconsultores.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
